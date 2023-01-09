@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :recipes
-  resources :users
+  resources :users, only: []
+  resources :recipes, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/me', to: 'users#show'
+
+  post '/signup', to: 'users#create'
 end
