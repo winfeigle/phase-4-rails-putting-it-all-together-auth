@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
     def index 
-        render json: Recipe.all, status: :created
+        render json: Recipe.all
     end
 
     def create
